@@ -1,0 +1,18 @@
+# Initialize the repository's actual records.yaml file as {}.
+# Add an entry only after the corresponding Record Commit has been synchronized to goal/main.
+# Quote every Record ID so YAML preserves leading zeroes. Replace all placeholders.
+
+"<record_id>":
+  parents: 
+    - <parent_record_id>
+  desc: "<concise description of the Experiment Record>"
+  status: COMPLETED # FAILED means the experiment could not be completed normally and was abandoned; goal attainment is recorded in result.md.
+  git:
+    branch: "feat/record-<record_id>-<branch-slug>"
+    base_commit: "<full hash of goal/main for a New Research Direction, or the selected Parent Record's record_commit>"
+    code_commits:
+      - "<full Code Commit hash in chronological order>"
+    record_commit: "<full hash of the original Record Commit on the Experiment Branch>"
+  results:
+    <metric_name>: "<value>"
+  conclusion: "<concise summary of the experiment's findings and implications>"
